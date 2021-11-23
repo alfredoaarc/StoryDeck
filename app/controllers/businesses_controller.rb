@@ -1,4 +1,5 @@
 class BusinessesController < ApplicationController
+
   def index
     @business = Business.all
   end
@@ -6,6 +7,7 @@ class BusinessesController < ApplicationController
   def show
     @business = Business.find(params[:id])
   end
+
 
   def new
     @business = Business.new
