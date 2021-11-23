@@ -1,7 +1,6 @@
 class StoriesController < ApplicationController
-
   def index
-    @stories = Stories.all
+    @story = Stories.all
   end
 
   def show
@@ -9,12 +8,12 @@ class StoriesController < ApplicationController
   end
 
   def new
-  @story = Story.new
+    @story = Story.new
   end
 
   def create
-  @story = Story.new(story_params)
-    @story.business= current_user
+    @story = Story.new(story_params)
+    @story.business = current_user
     @business.save
     redirect_to story_path(@story)
   end

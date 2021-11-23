@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#
-
 puts 'Cleaning database'
 Story.destroy_all
 Business.destroy_all
@@ -138,3 +136,4 @@ Business.create(
   user_id: sara_user.id
 )
 puts "Cheval d'Or business created"
+
