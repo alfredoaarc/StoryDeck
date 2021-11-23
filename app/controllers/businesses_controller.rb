@@ -13,12 +13,19 @@ class BusinessesController < ApplicationController
 
   private
 
-  def businesses_params
-    params.require(:business).permit(
-      :name,
-      :description,
-      :logo,
-      :category
-    )
+  def create
+    @business = Business.new(business_params)
+    @business.user = current_user
+    @business.save
+    redirect_to business_path(@business)
+  end
+
+  def business_params
+  params.require(:business).permit(
+    :name,
+    :description,
+    :website
+  )
+
   end
 end
