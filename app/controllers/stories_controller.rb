@@ -5,7 +5,18 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @stories = Stories.find(params[:id])
+    @story = Story.find(params[:id])
+  end
+
+  def new
+  @story = Story.new
+  end
+
+  def create
+  @story = Story.new(story_params)
+    @story.business= current_user
+    @business.save
+    redirect_to story_path(@story)
   end
 
   private
