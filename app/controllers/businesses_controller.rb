@@ -1,10 +1,5 @@
 class BusinessesController < ApplicationController
 
-   def index
-    @business = Business.all
-  end
-
-
   def new
     @business = Business.new
   end
