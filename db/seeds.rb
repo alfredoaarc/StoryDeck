@@ -1,10 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# photos_urls = [
+#   'https://res.cloudinary.com/novapixels/image/upload/v1637062972/ArtBnB/abhishek-upadhyay-VdEB-a__Y9A-unsplash_tusfzw.jpg',
+#   'https://res.cloudinary.com/novapixels/image/upload/v1637062972/ArtBnB/marianna-smiley-jHOg6v6RIIs-unsplash_bgfh6i.jpg',
+#   'https://res.cloudinary.com/novapixels/image/upload/v1637062964/ArtBnB/levi-meir-clancy-jZaQOzrC3XU-unsplash_w36osp.jpg']
 
 puts 'Cleaning database'
 Story.destroy_all
@@ -137,3 +134,13 @@ Business.create(
 )
 puts "Cheval d'Or business created"
 
+# Seed stories
+
+# Story.create(
+#   title: "New trail available",
+#   description: 'We are pleased to announce that a new 4h trail is now open, to take our visitors to the two sister lakes on top of the Mocho volcano. Welcome adventurers!'
+#   business_id: Business.first[:id],
+#   category: ['18-24', '25-35','travel','lifestyle','5,000 to 9,999'],
+#   photos: photos_urls[1]
+# )
+# puts "New story created"
