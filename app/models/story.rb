@@ -1,11 +1,12 @@
 class Story < ApplicationRecord
   belongs_to :business
-  belongs_to :campaign
-  has_one_attached :photos, dependent: :destroy
+  has_many :campaigns
+  has_many_attached :photos, dependent: :destroy
+  has_many :users, through: :business
   has_many :story_categories
-
   has_many :categories, through: :story_categories
 
-  validates :title, :description, :category, presence: true
-  validates :published, presence: true # :default false
+  validates :title, :description, presence: true
+  validates :photos, presence: true
+  # validates :published, presence: true # :default false
 end

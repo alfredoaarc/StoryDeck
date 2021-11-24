@@ -7,6 +7,7 @@ puts 'Cleaning database'
 Story.destroy_all
 Business.destroy_all
 User.destroy_all
+
 puts 'Database cleaned'
 
 # Seed users

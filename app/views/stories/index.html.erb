@@ -1,1 +1,7 @@
 <h1>This is the stories index</h1>
+
+<%= @stories.each do |story| %>
+  <% story.photos.each do |photo| %>
+  <%= cl_image_tag photo.key %>
+  <% end %>
+<% end %>
