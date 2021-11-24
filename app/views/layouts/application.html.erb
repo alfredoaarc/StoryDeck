@@ -9,9 +9,16 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
+    <% unless @skip_navbar %>
+      <%= render partial: 'components/navbar' %>
+    <% end %>
     <%= yield %>
+    <% unless @skip_footer %>
+      <%= render partial: 'components/footer' %>
+    <% end %>
   </body>
 </html>
