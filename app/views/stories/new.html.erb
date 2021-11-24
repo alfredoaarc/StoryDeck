@@ -1,10 +1,15 @@
-<h1>Create a new story</h1>
+
+<div class="create-story-header mb-4">
+  <div class="container">
+    <h1 class="white">Create a new story</h1>
+  </div>
+</div>
 <div class="container">
 <%= simple_form_for([@business, @story]) do |f| %>
   <%= f.input :title, required: true %>
   <%= f.input :description, as: :text, required: true %>
   <%= f.association :categories, as: :check_boxes, multiple: true %>
-  <%= f.input :photos, as: :file, required: true %>
-  <%= f.button :submit %>
+  <%= f.input :photos, as: :file, required: true, input_html: { multiple: true } %>
+  <%= f.button :submit, class: 'primary' %>
 <% end %>
 </div>
