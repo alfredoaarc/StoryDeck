@@ -1,6 +1,10 @@
 <nav class="navbar navbar-dark bg-light">
             <a href="#" class="nav-logo">StoryDeck</a>
-            <ul class="nav-menu">
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="/stories" class="nav-link">Discover</a>
                 </li>
@@ -14,9 +18,5 @@
                   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
                 </li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
             </div>
         </nav>
