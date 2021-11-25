@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
+    background-color: #F7EEE7;
 }
 
 .hamburger {
@@ -16,7 +17,7 @@
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #101010;
+    background-color: #293276;
 }
 
 .nav-menu {
@@ -51,9 +52,8 @@
         left: -100%;
         top: 5rem;
         flex-direction: column;
-        background-color: #fff;
+        background-color: #F7EEE7;
         width: 100%;
-        border-radius: 10px;
         text-align: center;
         transition: 0.3s;
         box-shadow:
@@ -64,6 +64,7 @@
     .nav-menu.active {
         left: 0;
         list-style: none;
+        z-index: 999;
     }
 
     .nav-item {
