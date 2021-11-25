@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Take authenticated users to dashboard
 
   resources :businesses do
-    resources :stories, only: [:index, :new, :create]
+    resources :stories, only: [:index, :new, :create, :show]
   end
   resources :chatrooms do
     resources :messages
