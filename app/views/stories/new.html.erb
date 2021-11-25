@@ -10,6 +10,6 @@
   <%= f.input :description, as: :text, required: true %>
   <%= f.association :categories, as: :check_boxes, multiple: true %>
   <%= f.input :photos, as: :file, required: true, input_html: { multiple: true } %>
-  <%= f.button :submit, class: 'primary' %>
+  <%= f.button :submit, class: 'btn-dark' %>
 <% end %>
 </div>

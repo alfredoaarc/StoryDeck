@@ -1,10 +1,14 @@
 class StoriesController < ApplicationController
   def index
     @stories = Story.all
+    @business = Business.find(params[:business_id])
+
   end
 
   def show
     @story = Story.find(params[:id])
+    @business = Business.find(params[:business_id])
+    @story.business = @business
   end
 
   def new
