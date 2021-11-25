@@ -1,7 +1,13 @@
-<h1>This is the stories index</h1>
+<div class="container">
 
-<%= @stories.each do |story| %>
-  <% story.photos.each do |photo| %>
-  <%= cl_image_tag photo.key %>
+  <h4>Find your next collab</h4>
+
+ <% @stories.each do |story| %>
+ <div class="card-product">
+    <h6><%= link_to story.title, business_story_path(@business, story)  %></h6>
+    <% story.photos.each do |photo| %>
+    <%= cl_image_tag photo.key %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+</div>

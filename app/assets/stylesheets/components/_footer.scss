@@ -21,3 +21,10 @@
 .footer-links a:hover {
   opacity: 1;
 }
+
+footer {
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+}
