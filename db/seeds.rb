@@ -110,7 +110,7 @@ puts 'Content creator Oliver created'
 
 # Seed business
 puts 'Creating users'
-Business.create(
+hans_business = Business.create(
   name: 'Huilo Huilo',
   description: 'We are a biological reserve committed to sustainable travel.',
   website: 'https://huilohuilo.com/en/',
@@ -134,13 +134,9 @@ Business.create(
 )
 puts "Cheval d'Or business created"
 
-# Seed stories
-
-# Story.create(
-#   title: "New trail available",
-#   description: 'We are pleased to announce that a new 4h trail is now open, to take our visitors to the two sister lakes on top of the Mocho volcano. Welcome adventurers!'
-#   business_id: Business.first[:id],
-#   category: ['18-24', '25-35','travel','lifestyle','5,000 to 9,999'],
-#   photos: photos_urls[1]
-# )
-# puts "New story created"
+Story.create!(
+  title: "New trail available",
+  description: 'We are pleased to announce that a new 4h trail is now open, to take our visitors to the two sister lakes on top of the Mocho volcano. Welcome adventurers!',
+  business: hans_business,
+  published: true
+)

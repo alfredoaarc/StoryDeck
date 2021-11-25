@@ -4,5 +4,7 @@ class PagesController < ApplicationController
   end
   def dashboard
     @user = current_user
+    @stories = current_user.business.stories
+
   end
 end
