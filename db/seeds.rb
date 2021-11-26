@@ -140,3 +140,33 @@ Story.create!(
   business: hans_business,
   published: true
 )
+
+Category.create!(
+  name: "18-24"
+  name: "25-34"
+  name: "35-44"
+  name: "45-54"
+  name: "55-64"
+  name: "65+"
+  name: "Cosmetics"
+  name: "Lifestyle"
+  name: "food"
+  name: "Travel"
+  name: "Fashion"
+  name: "Music"
+  name: "Tech"
+  name: "1,000 to 4,999"
+  name: "5,000 to 9,999"
+  name: "10K to 19,999"
+  name: "20K to 49,999"
+  name: "50K to 99,999"
+  name: "100K to 499,999"
+  name: "500K+"
+  name: "food"
+  name: "Travel"
+  name: "Fashion"
+  name: "Music"
+
+
+
+)
