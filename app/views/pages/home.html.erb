@@ -1,27 +1,15 @@
-<div class="row text text-black ml-5">
-    <div class="col d-flex align-items-center left-div">
-      <div>
-      <h1>StoryDeck</h1>
-      <p class="lead">Find your ideal storyteller</p>
+<% @skip_navbar %>
+<div class="row text">
+    <div class="col d-flex align-items-center header-div">
+      <div class="container text-center">
+      <h1 class="text-custom-light">Story Deck</h1>
+
+      <p class="lead text-custom-light">Find your ideal storyteller</p>
       <!-- Sign up / Sign in -->
-      <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-md btn-dark fw-bold bg-black mr-2' %></span>
-      <span><%= link_to 'Sign In', new_user_session_path, class: 'btn btn-md btn-outlined fw-bold' %></span>
-      </div>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-lg btn-custom btn-custom-light mb-3 btn-wide' %></span><br>
+      <span><%= link_to 'Sign In', new_user_session_path, class: 'btn btn-lg btn-custom btn-custom-light-outline btn-wide' %></span>
     </div>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    </div>
+
   </div>
 </div>
-
-
-<!--changes to do to put the caorusel in the background-->
+<div>
