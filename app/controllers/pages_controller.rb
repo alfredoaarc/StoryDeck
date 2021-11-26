@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     @skip_navbar = true
     @skip_footer = true
-    redirect_to root_path if user_signed_in?
+    # redirect_to root_path if user_signed_in? # this line is creating too many redirections at some point. Why?
   end
 
   def dashboard
