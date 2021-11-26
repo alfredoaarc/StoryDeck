@@ -7,6 +7,7 @@ puts 'Cleaning database'
 Story.destroy_all
 Business.destroy_all
 User.destroy_all
+
 puts 'Database cleaned'
 
 # Seed users
@@ -134,9 +135,25 @@ Business.create(
 )
 puts "Cheval d'Or business created"
 
-Story.create!(
+# Seed stories
+
+Story.create(
   title: "New trail available",
   description: 'We are pleased to announce that a new 4h trail is now open, to take our visitors to the two sister lakes on top of the Mocho volcano. Welcome adventurers!',
   business: hans_business,
   published: true
+)
+
+Story.create(
+  title: "I need my charger",
+  description: "Urgent",
+  published: false,
+  business_id: Business.last.id
+)
+
+Story.create(
+  title: "It's gonna rain",
+  description: "It's cold in London and Madrid",
+  published: false,
+  business_id: Business.last.id
 )

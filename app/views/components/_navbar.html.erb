@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark bg-custom-light">
+            <a href="/" class="nav-logo"> <%= cl_image_tag "https://res.cloudinary.com/novapixels/image/upload/v1637855910/Story%20Deck/logo_dark_kxfdrl.png", :height=>30, :alt=>"Story Deck logo dark" %> </a>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/stories" class="nav-link">Discover</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/dashboard" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/stories/new" class="nav-link">Create a story</a>
+                </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Chats</a>
+                </li>
+                <li>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </li>
+            </ul>
+            </div>
+        </nav>
