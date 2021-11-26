@@ -13,12 +13,16 @@
   </head>
 
   <body>
+<div class="page-container">
     <% unless @skip_navbar %>
-      <%= render partial: 'components/navbar' %>
+  <%= render "components/navbar" %>
     <% end %>
+  <main id="main-content">
     <%= yield %>
+  </main>
     <% unless @skip_footer %>
-      <%= render partial: 'components/footer' %>
+  <%= render "components/footer" %>
     <% end %>
+</div>
   </body>
 </html>

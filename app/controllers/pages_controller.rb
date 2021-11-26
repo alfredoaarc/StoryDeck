@@ -9,5 +9,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    # @business = Business.find(params[:id])
   end
 end

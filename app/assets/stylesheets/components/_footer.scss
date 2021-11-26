@@ -22,9 +22,8 @@
   opacity: 1;
 }
 
-footer {
-    clear: both;
-    position: relative;
-    height: 200px;
-    margin-top: -200px;
+.page-container {
+display: grid;
+grid-template-rows: auto 1fr auto;
+min-height: 100vh;
 }
