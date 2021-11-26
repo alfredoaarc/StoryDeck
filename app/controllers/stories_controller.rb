@@ -1,10 +1,14 @@
 class StoriesController < ApplicationController
   def index
     @stories = Story.all
+    @business = Business.find(params[:business_id])
+
   end
 
   def show
     @story = Story.find(params[:id])
+    @business = Business.find(params[:business_id])
+    @story.business = @business
   end
 
   def new
@@ -15,10 +19,13 @@ class StoriesController < ApplicationController
   def create
     @business = Business.find(params[:business_id])
     @story = Story.new(story_params)
-    @story.user = current_user
-    @story.save
-    #   redirect_to business_stories(@business)
-    # end
+    @story.business = @business
+    @business.user = current_user
+    if @story.save!
+      redirect_to business_stories_path(@business)
+    else
+      render :new
+    end
   end
 
   private
@@ -27,9 +34,9 @@ class StoriesController < ApplicationController
     params.require(:story).permit(
       :title,
       :description,
-      :photos,
       :business_id,
-      :published
+      :published,
+      photos: []
     )
   end
 end

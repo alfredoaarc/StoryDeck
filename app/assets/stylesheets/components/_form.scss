@@ -1,0 +1,17 @@
+.form-control {
+  box-shadow: none;
+  border-radius: 30px;
+  padding: 16px 16px;
+  border: none;
+  background-color: #EADED4;
+}
+
+.form-control:focus {
+  background-color: #EADED4;
+  border: none;
+  box-shadow: none;
+}
+
+textarea.form-control {
+  height: 200px;
+}

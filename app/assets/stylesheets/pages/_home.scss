@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+
+.left-div {
+  height: 100vh;
+}
+.right-div {
+  background-size: cover;
+}
+.index-subtitle {
+  font-weight: 300;
+  font-size: 14px;
+}
+.signup {
+  text-decoration: underline;
+}
+.signin {
+  color: black;
+}
+
+.h1 {
+  text-align: center;
+  object-position: center;
+}
+
+.carousel-item {
+  background-position:center;
+}

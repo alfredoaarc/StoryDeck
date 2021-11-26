@@ -7,6 +7,7 @@ puts 'Cleaning database'
 Story.destroy_all
 Business.destroy_all
 User.destroy_all
+
 puts 'Database cleaned'
 
 # Seed users
@@ -134,39 +135,55 @@ Business.create(
 )
 puts "Cheval d'Or business created"
 
-Story.create!(
+# Seed stories
+
+Story.create(
   title: "New trail available",
   description: 'We are pleased to announce that a new 4h trail is now open, to take our visitors to the two sister lakes on top of the Mocho volcano. Welcome adventurers!',
   business: hans_business,
   published: true
 )
 
+
 Category.create!(
-  name: "18-24"
-  name: "25-34"
-  name: "35-44"
-  name: "45-54"
-  name: "55-64"
-  name: "65+"
-  name: "Cosmetics"
-  name: "Lifestyle"
-  name: "food"
-  name: "Travel"
-  name: "Fashion"
-  name: "Music"
-  name: "Tech"
-  name: "1,000 to 4,999"
-  name: "5,000 to 9,999"
-  name: "10K to 19,999"
-  name: "20K to 49,999"
-  name: "50K to 99,999"
-  name: "100K to 499,999"
-  name: "500K+"
-  name: "food"
-  name: "Travel"
-  name: "Fashion"
-  name: "Music"
+  name: "18-24",
+  name: "25-34",
+  name: "35-44",
+  name: "45-54",
+  name: "55-64",
+  name: "65+",
+  name: "Cosmetics",
+  name: "Lifestyle",
+  name: "food",
+  name: "Travel",
+  name: "Fashion",
+  name: "Music",
+  name: "Tech",
+  name: "1,000 to 4,999",
+  name: "5,000 to 9,999",
+  name: "10K to 19,999",
+  name: "20K to 49,999",
+  name: "50K to 99,999",
+  name: "100K to 499,999",
+  name: "500K+",
+  name: "food",
+  name: "Travel",
+  name: "Fashion",
+  name: "Music",
+)
 
 
 
+Story.create(
+  title: "I need my charger",
+  description: "Urgent",
+  published: false,
+  business_id: Business.last.id
+)
+
+Story.create(
+  title: "It's gonna rain",
+  description: "It's cold in London and Madrid",
+  published: false,
+  business_id: Business.last.id
 )
