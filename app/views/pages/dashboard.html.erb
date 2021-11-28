@@ -1,19 +1,27 @@
 <div class="container">
-  <h3>Hey</h3>
-  <ul class="list-inline tabs-underlined">
+  <p>Hey, <%= current_user.first_name %></p>
+  <ul class="list-inline tabs-underlined" id="pills-tab" role="tablist">
     <li>
-      <a href="/businesses/:business_id/storie" class="tab-underlined active">Business</a>
+      <a href="#business" class="tab-underlined active">Business</a>
     </li>
     <li>
-      <a href="/stories" class="tab-underlined">My stories</a>
+      <a href="#stories" class="tab-underlined">My stories</a>
     </li>
     <li>
-      <a href="/chatrooms" class="tab-underlined">Conversations</a>
+      <a href="#" class="tab-underlined">Conversations</a>
     </li>
   </ul>
-
-<div class="card-info">
+<div>
+<p>You currently have <%= @business_count %> business<%= @plural %>.</p>
+<% @my_businesses.each do |business| %>
+    <div class="mt-4 border-top">
+      <!-- Find a way to show the business logo here. It's currently returning nil for ? reason. -->
+      <h3 class="mt-4"><%= business.name %></h3>
+      <p><%= business.description %></p>
+      <p><strong>Website:</strong> <a href="<%= business.website %>" target="_blank" class="custom-link"><%= business.website %></p>
+        <%= link_to 'Edit this brand', edit_business_path(business), class: 'btn btn-custom btn-custom-dark-outline' %>
+    </div>
+    <% end %>
 </div>
-Your business information!
 
 </div>
