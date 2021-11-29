@@ -17,8 +17,7 @@
       <p><%= @story.business.description %></p>
     </div>
   </div>
-  <a href="#" class="btn btn-dark">Start a conversation</a>
-  <a href="/stories" class="btn btn-ghost">Browse stories</a>
-
+  <a href="#" class="btn btn-custom btn-custom-dark">Start a conversation</a>
+  <%= link_to 'Edit this story', edit_business_story_path(@business, @story), class: 'btn btn-custom btn-custom-dark-outline' %>
 
 </div>

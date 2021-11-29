@@ -1,13 +1,13 @@
 <div class="container">
-
-  <h4>Find your next collab</h4>
-
- <% @stories.each do |story| %>
- <div class="card-product">
-    <h6><%= link_to story.title, business_story_path(@business, story)  %></h6>
-    <% story.photos.each do |photo| %>
-    <%= cl_image_tag photo.key %>
+  <h1 class="white">All stories</h1>
+  <% @stories.each do |story| %>
+    <div class="col-md-9">
+      <h3 class="white"><%= link_to story.title, business_story_path(@business, story) %></h3>
+    </div>
+    <div class="col-md-3">
+      <% story.photos.each do |photo| %>
+        <%= cl_image_tag photo.key %>
+        <% end %>
+    </div>
     <% end %>
-  <% end %>
-</div>
 </div>

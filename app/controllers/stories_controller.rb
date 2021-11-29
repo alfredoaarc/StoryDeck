@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   def index
-    @stories = Story.all
+    @stories = Story.all.where(business_id: params[:business_id])
     @business = Business.find(params[:business_id])
   end
 
@@ -25,6 +25,28 @@ class StoriesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    @story = Story.all
+    @story = Story.find(params[:id])
+    if @story.update(story_params)
+      redirect_to business_stories_path(params[:business_id])
+      flash[:notice] = 'Your story has been updated.'
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
+    @business = Business.find(params[:business_id])
+    @story = Story.find(params[:id])
+
+  end
+
+  def destroy
+    # @story = Story.find(params[:id])
+    @story.destroy
   end
 
   private
