@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get "dashboard", to: 'pages#dashboard'
 
-  resources :creator
+  resources :creators
 
   resources :category
 end

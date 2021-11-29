@@ -12,7 +12,7 @@ class CreatorsController < ApplicationController
     @creator = Creator.new
   end
 
-  private
+
 
   def create
     @creator = Creator.new(creator_params)
@@ -20,6 +20,8 @@ class CreatorsController < ApplicationController
     @creator.save
     redirect_to business_path(@creator)
   end
+
+  private
 
   def creator_params
   params.require(:creator).permit(

@@ -1,0 +1,5 @@
+meta_product_name: "Story Deck"
+meta_title: "Story Deck - Find Your Storyteller"
+meta_description: "A place where businesses come to find the right voice to spread their brand."
+meta_image: "meta-image.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

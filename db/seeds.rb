@@ -147,37 +147,79 @@ Story.create(
 
 
 Category.create!(
-  name: "18-24",
-  name: "25-34",
-  name: "35-44",
-  name: "45-54",
-  name: "55-64",
-  name: "65+",
-  name: "Cosmetics",
-  name: "Lifestyle",
-  name: "food",
-  name: "Travel",
-  name: "Fashion",
-  name: "Music",
-  name: "Tech",
-  name: "1,000 to 4,999",
-  name: "5,000 to 9,999",
-  name: "10K to 19,999",
-  name: "20K to 49,999",
-  name: "50K to 99,999",
-  name: "100K to 499,999",
-  name: "500K+",
-  name: "food",
-  name: "Travel",
-  name: "Fashion",
-  name: "Music",
+  name: "18-24"
+)
+Category.create!(
+  name: "25-34"
+)
+Category.create!(
+  name: "35-44"
+)
+Category.create!(
+  name: "45-54"
+)
+Category.create!(
+  name: "55-64"
+)
+Category.create!(
+  name: "65+"
+)
+Category.create!(
+  name: "Cosmetics"
+)
+Category.create!(
+  name: "Lifestyle"
+)
+Category.create!(
+  name: "food"
+)
+Category.create!(
+  name: "Travel"
+)
+Category.create!(
+  name: "Fashion"
+)
+Category.create!(
+  name: "Music"
+)
+Category.create!(
+  name: "Tech"
+)
+Category.create!(
+  name: "1,000 to 4,999"
+)
+Category.create!(
+  name: "5,000 to 9,999"
+)
+Category.create!(
+  name: "10K to 19,999"
+)
+Category.create!(
+  name: "20K to 49,999"
+)
+Category.create!(
+  name: "50K to 99,999"
+)
+Category.create!(
+  name: "100K to 499,999"
+)
+Category.create!(
+  name: "500K+"
+)
+Category.create!(
+  name: "food"
+)
+Category.create!(
+  name: "Travel"
+)
+Category.create!(
+  name: "Fashion"
+)
+Category.create!(
+  name: "Music"
 )
 
-
-
 Story.create(
-  title: "I need my charger",
-  description: "Urgent",
   title: "Sunday Brunch Day",
   description: "We are launching a new brunch menu composed with a wide variety of traditional asians breakfasts. We're looking for two food bloggers to record and share the avant-premiere brunch degustation and announce the first Sunday Brunch Day of this summer season.",
   published: false,

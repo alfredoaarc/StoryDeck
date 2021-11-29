@@ -32,8 +32,8 @@ class BusinessesController < ApplicationController
   def update
     @business = Business.find(params[:id])
     if @business.update(business_params)
-      redirect_to dashboard_path
       flash[:notice] = 'Business was updated.'
+      redirect_to dashboard_path
     else
       render 'edit'
     end
@@ -50,11 +50,6 @@ class BusinessesController < ApplicationController
   end
 
   def business_params
-    params.require(:business).permit(
-      :name,
-      :logo,
-      :description,
-      :website
-    )
+    params.require(:business).permit(:name, :logo, :description, :website)
   end
 end
