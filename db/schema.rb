@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_125820) do
+ActiveRecord::Schema.define(version: 2021_11_29_111108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,12 +62,6 @@ ActiveRecord::Schema.define(version: 2021_11_25_125820) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "category_mains", force: :cascade do |t|
-    t.string "age_range"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "chatrooms", force: :cascade do |t|
     t.bigint "campaign_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -75,19 +69,19 @@ ActiveRecord::Schema.define(version: 2021_11_25_125820) do
     t.index ["campaign_id"], name: "index_chatrooms_on_campaign_id"
   end
 
-  create_table "content_creator_business_connections", force: :cascade do |t|
-    t.string "status"
-    t.bigint "business_id", null: false
-    t.bigint "user_id", null: false
+  create_table "creator_categories", force: :cascade do |t|
+    t.bigint "creator_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["business_id"], name: "index_content_creator_business_connections_on_business_id"
-    t.index ["user_id"], name: "index_content_creator_business_connections_on_user_id"
+    t.index ["category_id"], name: "index_creator_categories_on_category_id"
+    t.index ["creator_id"], name: "index_creator_categories_on_creator_id"
   end
 
   create_table "creators", force: :cascade do |t|
     t.string "stage_name"
     t.string "user_id"
+    t.string "name"
     t.string "description"
     t.string "website"
     t.datetime "created_at", precision: 6, null: false
@@ -142,8 +136,8 @@ ActiveRecord::Schema.define(version: 2021_11_25_125820) do
   add_foreign_key "campaigns", "stories"
   add_foreign_key "campaigns", "users"
   add_foreign_key "chatrooms", "campaigns"
-  add_foreign_key "content_creator_business_connections", "businesses"
-  add_foreign_key "content_creator_business_connections", "users"
+  add_foreign_key "creator_categories", "categories"
+  add_foreign_key "creator_categories", "creators"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "stories", "businesses"

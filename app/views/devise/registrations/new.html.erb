@@ -30,6 +30,11 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+
+             <%= f.input :business_owner,
+            collection: [['No',false],['Yes',true]],
+            include_blank: false, selected: :no
+             %>
   </div>
 
   <div class="form-actions">
