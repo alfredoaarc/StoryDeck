@@ -1,19 +1,28 @@
-<h1>My profile</h1>
 
-<h3>here is glance at your ideal content creators</h3>
+<div class="container">
+  <p>Hey, <%= current_user.first_name %></p>
+  <ul class="list-inline tabs-underlined" id="pills-tab" role="tablist">
+    <li>
+      <a href="#business" class="tab-underlined active">Business</a>
+    </li>
+    <li>
+      <a href="#stories" class="tab-underlined">My stories</a>
+    </li>
+    <li>
+      <a href="#" class="tab-underlined">Conversations</a>
+    </li>
+  </ul>
+<div>
+<p>You currently have <%= @business_count %> business<%= @plural %>.</p>
+<% @my_businesses.each do |business| %>
+    <div class="mt-4 border-top">
+      <!-- Find a way to show the business logo here. It's currently returning nil for ? reason. -->
+      <h3 class="mt-4"><%= business.name %></h3>
+      <p><%= business.description %></p>
+      <p><strong>Website:</strong> <a href="<%= business.website %>" target="_blank" class="custom-link"><%= business.website %></p>
+        <%= link_to 'Edit this brand', edit_business_path(business), class: 'btn btn-custom btn-custom-dark-outline' %>
+    </div>
+    <% end %>
+</div>
 
-
-<h2>My stories|My matches|My requests</h2>
-
-
-<h1>My stories</h1>
-<% @stories.each do |story|%>
-<%= story.title %>
-<% end %>
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-  </div>
 </div>

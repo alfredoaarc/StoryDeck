@@ -2,7 +2,6 @@ class StoriesController < ApplicationController
   def index
     @stories = Story.all
     @business = Business.find(params[:business_id])
-
   end
 
   def show
@@ -12,7 +11,7 @@ class StoriesController < ApplicationController
   end
 
   def new
-    @business = Business.find(params[:business_id])
+    @business = Business.find_by_id(params[:business_id])
     @story = Story.new
   end
 

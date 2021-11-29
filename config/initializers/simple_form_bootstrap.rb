@@ -360,7 +360,6 @@ SimpleForm.setup do |config|
     b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
 
-
   # Input Group - custom component
   # see example app and config at https://github.com/rafaelfranca/simple_form-bootstrap
   # config.wrappers :input_group, tag: 'div', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|

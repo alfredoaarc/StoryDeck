@@ -5,6 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :messages, dependent: :destroy
   has_many :campaigns, dependent: :destroy
-  has_many :content_creator_business_connections, dependent: :destroy
-  has_one :business
+  has_many :businesses, dependent: :destroy
 end
