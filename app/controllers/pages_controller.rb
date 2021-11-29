@@ -24,10 +24,6 @@ class PagesController < ApplicationController
       @plural = ''
       puts @plural
     end
-
-    # if business.logo.nil?
-    #   return @business_logo
-    # end
   end
 
   private
