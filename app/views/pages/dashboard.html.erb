@@ -17,10 +17,21 @@
 <% @my_businesses.each do |business| %>
     <div class="mt-4 border-top">
       <!-- Find a way to show the business logo here. It's currently returning nil for ? reason. -->
-      <h3 class="mt-4"><%= business.name %></h3>
-      <p><%= business.description %></p>
-      <p><strong>Website:</strong> <a href="<%= business.website %>" target="_blank" class="custom-link"><%= business.website %></p>
-        <%= link_to 'Edit this brand', edit_business_path(business), class: 'btn btn-custom btn-custom-dark-outline' %>
+      <div style='display:flex; justify-content: space-between;'>
+        <div>
+          <h3 class="mt-4"><%= business.name %></h3>
+          <p><%= business.description %></p>
+          <p><strong>Website:</strong></p>
+          <a href="<%= business.website %>" target="_blank" class="custom-link">
+            <%= business.website %>
+          </a>
+        </div>
+
+        <div class="card-business" style="background-image: url(<%= cl_image_path business.logo.key %>); width:50%">
+        </div>
+      </div>
+      <%= link_to "Create a story", new_business_story_path(business), class: "btn btn-custom btn-custom-dark" %>
+      <%= link_to 'Edit this brand', edit_business_path(business), class: 'btn btn-custom btn-custom-dark-outline' %>
     </div>
     <% end %>
 </div>
