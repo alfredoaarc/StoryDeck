@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark bg-custom-light">
-            <a href="/" class="nav-logo"> <%= cl_image_tag "https://res.cloudinary.com/novapixels/image/upload/v1637855910/Story%20Deck/logo_dark_kxfdrl.png", :height=>30, :alt=>"Story Deck logo dark" %> </a>
+            <a href="/" class="nav-logo"> <%= image_tag "logo_dark.png", height: "30px", :alt=>"Story Deck logo dark" %> </a>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -11,9 +11,7 @@
                   <li class="nav-item">
                       <a href="/dashboard" class="nav-link">Dashboard</a>
                   </li>
-                  <li class="nav-item">
-                      <%= link_to "Create a story", new_business_story_path(:business_id), class: "nav-link btn btn-custom btn-custom-dark-outline" %>
-                  </li>
+
                     <li class="nav-item">
                       <a href="#" class="nav-link">Chats</a>
                   </li>
