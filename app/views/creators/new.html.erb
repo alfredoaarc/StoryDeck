@@ -1,5 +1,9 @@
-<h1>Hello creator</h1>
-<h4>Tell us about you!</h4>
-<div class="mt-3 w-50">
-  <%=render 'form', creator: @creator %>
+<div class="container">
+<%= simple_form_for([@creator]) do |f| %>
+  <%= f.input :stage_name, required: true, placeholder: 'Enter your stage_name' %>
+  <%= f.input :description, as: :text, required: true, placeholder: 'Describe your creator in 260 characters' %>
+  <%= f.input :website, as: :text, required: true, placeholder: 'Enter the link of your website' %>
+  <%= f.input :logo, as: :file, required: true %>
+  <%= f.button :submit, class: 'btn-dark' %>
+<% end %>
 </div>
