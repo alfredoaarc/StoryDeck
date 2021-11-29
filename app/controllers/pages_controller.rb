@@ -5,9 +5,9 @@ class PagesController < ApplicationController
     @user = current_user
     @skip_navbar = true
     @skip_footer = true
-    if @user == nil
+    if @user.nil?
       render 'home'
-    elsif @user.business_owner == nil
+    elsif @user.business_owner.nil?
       redirect_to new_business_path
     elsif user_signed_in?
       redirect_to dashboard_path
@@ -15,7 +15,24 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user = current_user
-    # @business = Business.find(params[:id])
+    @my_businesses = current_user.businesses
+    @business_count = @my_businesses.count
+    @plural = 'es'
+    if @business_count > 1
+      puts @plural
+    else
+      @plural = ''
+      puts @plural
+    end
+  end
+
+  private
+
+  def set_business
+    @business = Business.find(params[:id])
+  end
+
+  def business_params
+    params.require(:business).permit(:name, :logo, :description, :website)
   end
 end

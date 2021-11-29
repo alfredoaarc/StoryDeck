@@ -11,11 +11,20 @@
   color: #F7EEE7;
 }
 .btn-custom-light-outline {
-  color: #293276;
   border: 2px solid #F7EEE7;
   color: #F7EEE7;
 }
+.btn-custom-light-outline:hover {
+  border: 2px solid #F7EEE7;
+  color: #293276;
+  background-color: #F7EEE7;
+}
 .btn-custom-dark-outline {
   border: 2px solid #293276;
+  color: #293276;
+}
+.btn-custom-dark-outline:hover {
+  border: 2px solid #293276;
   color: #F7EEE7;
+  background-color: #293276;
 }

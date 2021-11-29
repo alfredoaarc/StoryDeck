@@ -12,14 +12,14 @@ puts 'Database cleaned'
 
 # Seed users
 puts 'Creating users'
-hans_user = User.create(
-  first_name: 'Hans',
-  last_name: 'Smith',
-  email: 'hans@email.story',
+mo_user = User.create(
+  first_name: 'Monica',
+  last_name: 'R',
+  email: 'mo@email.story',
   password: '123456',
   business_owner: true
 )
-puts 'Business owner Hans created'
+puts 'Business owner Monica created'
 maria_user = User.create(
   first_name: 'María',
   last_name: 'Alba',
@@ -111,11 +111,12 @@ puts 'Content creator Oliver created'
 
 # Seed business
 puts 'Creating users'
-Business.create(
+
+huilo_huilo = Business.create(
   name: 'Huilo Huilo',
   description: 'We are a biological reserve committed to sustainable travel.',
   website: 'https://huilohuilo.com/en/',
-  user_id: hans_user.id
+  user_id: sara_user.id
 )
 puts 'Huilo Huilo business created'
 
@@ -123,39 +124,69 @@ Business.create(
   name: 'Chucao',
   description: 'Handmade urban ponchos,100% Merino wool from Chile. We are a slow fashion brand.',
   website: 'https://www.instagram.com/chucao.design/',
-  user_id: maria_user.id
+  user_id: mo_user.id
 )
 puts 'Chucao business created'
 
-Business.create(
+cheval_dor = Business.create(
   name: "Cheval d'Or",
   description: 'Author cuisine with a taste of Asia in the heart of the city of light.',
   website: 'https://chevaldorparis.com/',
-  user_id: sara_user.id
+  user_id: mo_user.id
 )
 puts "Cheval d'Or business created"
 
 # Seed stories
 
 Story.create(
+  title: "New trail available",
+  description: 'We are pleased to announce that a new 4h trail is now open, to take our visitors to the two sister lakes on top of the Mocho volcano. Welcome adventurers!',
+  business: hans_business,
+  published: true
+)
+
+
+Category.create!(
+  name: "18-24",
+  name: "25-34",
+  name: "35-44",
+  name: "45-54",
+  name: "55-64",
+  name: "65+",
+  name: "Cosmetics",
+  name: "Lifestyle",
+  name: "food",
+  name: "Travel",
+  name: "Fashion",
+  name: "Music",
+  name: "Tech",
+  name: "1,000 to 4,999",
+  name: "5,000 to 9,999",
+  name: "10K to 19,999",
+  name: "20K to 49,999",
+  name: "50K to 99,999",
+  name: "100K to 499,999",
+  name: "500K+",
+  name: "food",
+  name: "Travel",
+  name: "Fashion",
+  name: "Music",
+)
+
+
+
+Story.create(
   title: "I need my charger",
   description: "Urgent",
+  title: "Sunday Brunch Day",
+  description: "We are launching a new brunch menu composed with a wide variety of traditional asians breakfasts. We're looking for two food bloggers to record and share the avant-premiere brunch degustation and announce the first Sunday Brunch Day of this summer season.",
   published: false,
-  business_id: Business.last.id
+  business_id: cheval_dor.id
 )
 
 Story.create(
-  title: "It's gonna rain",
-  description: "It's cold in London and Madrid",
+  title: "New trail available",
+  description: "We are pleased to announce that a new 4h trail is now open, to take our visitors to the two sister lakes on top of the Mocho volcano. Welcome adventurers!",
   published: false,
-  business_id: Business.last.id
+  business_id: huilo_huilo.id
 )
-
-# Story.create(
-#   title: "New trail available",
-#   description: 'We are pleased to announce that a new 4h trail is now open, to take our visitors to the two sister lakes on top of the Mocho volcano. Welcome adventurers!'
-#   business_id: Business.first[:id],
-#   category: ['18-24', '25-35','travel','lifestyle','5,000 to 9,999'],
-#   photos: photos_urls[1]
-# )
-# puts "New story created"
