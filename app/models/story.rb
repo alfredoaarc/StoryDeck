@@ -8,5 +8,4 @@ class Story < ApplicationRecord
   has_many :categories, through: :story_categories
 
   validates :title, :description, presence: true
-  validates :published, presence: true # :default false
 end

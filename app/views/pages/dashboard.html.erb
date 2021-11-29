@@ -6,9 +6,6 @@
       <a href="#business" class="tab-underlined active">Business</a>
     </li>
     <li>
-      <a href="#stories" class="tab-underlined">My stories</a>
-    </li>
-    <li>
       <a href="#" class="tab-underlined">Conversations</a>
     </li>
   </ul>
@@ -19,8 +16,10 @@
       <!-- Find a way to show the business logo here. It's currently returning nil for ? reason. -->
       <div style='display:flex; justify-content: space-between;'>
         <div>
-          <h3 class="mt-4"><%= business.name %></h3>
-          <p><%= business.description %></p>
+            <%= link_to business_stories_path(business) do %>
+              <h3 class="mt-4"><%= business.name %></h3>
+              <p><%= business.description %></p>
+              <% end %>
           <p><strong>Website:</strong></p>
           <a href="<%= business.website %>" target="_blank" class="custom-link">
             <%= business.website %>
