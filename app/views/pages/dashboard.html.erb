@@ -17,21 +17,27 @@
 <% @my_businesses.each do |business| %>
     <div class="mt-4 border-top">
       <!-- Find a way to show the business logo here. It's currently returning nil for ? reason. -->
-      <div style='display:flex; justify-content: space-between;'>
+
+        <div class='mt-3'>
+          <% if  business.logo.attached? %>
+            <div class="card-business" style="background-image: url(<%= cl_image_path business.logo.key %>);">
+            </div>
+          <% else %>
+            <div class="card-business" style="background-image: url('https://res.cloudinary.com/novapixels/image/upload/v1638194047/Story%20Deck/meta-image_wvzdab.png');">
+            </div>
+          <% end %>
+        </div>
         <div>
           <h3 class="mt-4"><%= business.name %></h3>
           <p><%= business.description %></p>
-          <p><strong>Website:</strong></p>
+          <p><strong>Website:</strong>
           <a href="<%= business.website %>" target="_blank" class="custom-link">
             <%= business.website %>
-          </a>
-        </div>
-
-        <div class="card-business" style="background-image: url(<%= cl_image_path business.logo.key %>); width:50%">
+          </a></p>
+      <%= link_to "Create a story", new_business_story_path(business), class: "btn btn-custom btn-custom-dark mt-3" %><br>
+      <%= link_to 'Edit this brand', edit_business_path(business), class: 'btn btn-custom btn-custom-dark-outline mt-3' %>
         </div>
       </div>
-      <%= link_to "Create a story", new_business_story_path(business), class: "btn btn-custom btn-custom-dark" %>
-      <%= link_to 'Edit this brand', edit_business_path(business), class: 'btn btn-custom btn-custom-dark-outline' %>
     </div>
     <% end %>
 </div>

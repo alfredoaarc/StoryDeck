@@ -10,7 +10,7 @@
   <div class="container">
     <%= simple_form_for @business do |f| %>
       <%= f.input :name, required: true, placeholder: 'Enter the name of your business' %>
-      <%= f.input :logo, as: :file, required: true, input_html: { multiple: true } %>
+      <%= f.input :logo, as: :file, required: true %>
       <%= f.input :description, as: :text, required: true, placeholder: 'Describe your business in 260 characters' %>
       <%= f.input :website, as: :text, required: true, placeholder: 'Enter the link of your website' %>
       <div class="d-flex justify-content-center">
