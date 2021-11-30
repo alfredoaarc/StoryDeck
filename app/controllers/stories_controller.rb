@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
   def index
+    @business = Business.find_by_id(params[:business_id])
     if current_user.business_owner?
       @stories = current_user.business_stories
     else
