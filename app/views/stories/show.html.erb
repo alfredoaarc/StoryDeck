@@ -19,12 +19,25 @@
   </div>
 </div>
 <div>
+  <% @story_categories %>
   <% @creators.each do |creator| %>
-    <%= creator.stage_name %>
-    <%= simple_form_for [@story, @campaign] do |f| %>
-      <%= f.input :story_id, value: @story.id, label: false, input_html: {hidden: true}  %>
-      <%= f.input :creator_id, value: creator.id, label: false, input_html: {hidden: true} %>
-      <%= f.submit "Join Campaign" %>
+    <% @creator_categories = creator.categories.map(&:name) %>
+    <% unless (@creator_categories & @story_categories).empty? %>
+      <div style="background-color: green;">
+        <%= creator.stage_name %>
+        <%= simple_form_for [@story, @campaign] do |f| %>
+          <%= f.input :story_id, value: @story.id, label: false, input_html: {hidden: true}  %>
+          <%= f.input :creator_id, value: creator.id, label: false, input_html: {hidden: true} %>
+          <%= f.submit "Join Campaign", class: "btn" %>
+        <% end %>
+      </div>
+    <% else %>
+
+      <%= simple_form_for [@story, @campaign] do |f| %>
+        <%= f.input :story_id, value: @story.id, label: false, input_html: {hidden: true}  %>
+        <%= f.input :creator_id, value: creator.id, label: false, input_html: {hidden: true} %>
+        <%= f.submit "Join Campaign", class: "btn" %>
+      <% end %>
     <% end %>
   <% end %>
 </div>

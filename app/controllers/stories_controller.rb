@@ -11,8 +11,9 @@ class StoriesController < ApplicationController
 
   def show
     @campaign = Campaign.new
-    @creators = Creator.all
     @story = Story.find(params[:id])
+    @story_categories = @story.categories.map(&:name)
+    @creators = Creator.all
     @business = @story.business
   end
 
