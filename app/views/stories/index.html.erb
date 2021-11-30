@@ -1,31 +1,17 @@
 <div class="container">
-  <h1 class="white">All stories</h1>
+  <h2 class="mt-4 mb-4">You have created <%= @stories.count %> stories for <%= @business.name %> business.</h1>
   <% @stories.each do |story| %>
-    <div class="col-md-9">
-      <h3 class="white"><%= link_to story.title, story_path(story) %></h3>
-    </div>
+
     <div class="col-md-3">
       <% story.photos.each do |photo| %>
-        <%= cl_image_tag photo.key %>
+        <%= cl_image_tag photo.key, class: 'story-cover-photo' %>
+        <div class="col-md-9 mt-3 mb-5">
+          <h3 class="white"><%= link_to story.title, story_path(story) %></h3>
+          <p class="white"><%= link_to story.description, story_path(story) %></p>
+
+        </div>
         <% end %>
     </div>
-    <% unless current_user.business_owner? %>
-      <%#= If current user is creator %>
-      <%= simple_form_for [story, @campaign] do |f| %>
-        <%= f.input :story_id, value: story.id, label: false, input_html: {hidden: true} %>
-        <%= f.input :creator_id, value: current_user.creator.id, label: false, input_html: {hidden: true} %>
-        <%= f.submit "Join Campaign" %>
-      <% end %>
-    <% else %>
-      <%#= If current user is a business owner %>
-      <% @creators.each do |creator| %>
-        <h2><%= creator.stage_name %></h2>
-        <%= simple_form_for [story, @campaign] do |f| %>
-          <%= f.input :story_id, value: story.id, label: false, input_html: { hidden: true} %>
-          <%= f.input :creator_id, value: creator.id, label: false, input_html: {hidden: true} %>
-          <%= f.submit "Join Campaign" %>
-        <% end %>
-      <% end %>
-    <% end %>
+
   <% end %>
 </div>
