@@ -40,3 +40,6 @@ class CreatorsController < ApplicationController
   )
   end
 end
+
+
+# 2 different func

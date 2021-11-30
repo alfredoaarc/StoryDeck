@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     @skip_footer = true
     if @user.nil?
       render 'home'
-    elsif @user.business_owner.nil?
+    elsif !@user.business_owner?
       redirect_to new_business_path
     elsif user_signed_in?
       redirect_to dashboard_path
