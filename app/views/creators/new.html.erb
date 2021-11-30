@@ -1,10 +1,12 @@
 <div class="container">
   <%= simple_form_for([@creator]) do |f| %>
-    <%= f.input :stage_name, required: true, placeholder: 'Enter your stage_name' %>
+    <%= f.input :stage_name, required: true, placeholder: 'What is your account name?' %>
     <%= f.input :description, as: :text, required: true, placeholder: 'Describe your creator in 260 characters' %>
-    <%= f.input :website, as: :text, required: true, placeholder: 'Enter the link of your website' %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :location, collection: ['Madrid','Santiago','Brussels'], label: 'Where does your audience live?' %>
+    <%= f.input :website, required: true, label: 'Link', placeholder: 'Enter the link to your website or social profile' %>
+    <%= f.input :photos, as: :file, label: 'Upload up to 3 images', required: true, input_html: { multiple: true } %>
     <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-    <%= f.button :submit, class: 'btn-dark' %>
+    <br/>
+    <%= f.button :submit, class: 'btn-custom btn-custom-dark btn-custom-dark-outlined mt-4' %>
   <% end %>
 </div>

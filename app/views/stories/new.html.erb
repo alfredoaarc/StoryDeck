@@ -8,9 +8,12 @@
   <%= simple_form_for([@business, @story]) do |f| %>
     <%= f.input :title, label: false, placeholder: 'Your title*', required: true %>
     <%= f.input :description, label: false, placeholder: 'In a few words, tell us what your story is about*', as: :text, required: true %>
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-    <%= f.input :photos, as: :file, class: 'btn', label: 'Upload your photo here', required: true, input_html: { multiple: true } %>
-    <%= f.button :submit, class: 'btn-custom btn-custom-dark' %>
+    <%= f.input :location, collection: ['Madrid','Santiago','Brussels'], label: 'Where does your audience live?' %>
+    <%= f.input :photos, as: :file, class: 'mt-3', label: 'Upload your photos here (up to 4)', required: true, input_html: { multiple: true } %>
+    <p class="mt-4">Choose the categories of your target audience:</p>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name, :as => :boolean %>
+    <br/>
+    <%= f.button :submit, class: 'btn btn-custom btn-custom-dark-outline mt-4' %>
   <% end %>
   </div>
 </div>
