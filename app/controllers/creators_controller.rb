@@ -29,15 +29,14 @@ class CreatorsController < ApplicationController
 
   private
 
-
   def creator_params
   params.require(:creator).permit(
     :stage_name,
-    :logo,
     :description,
     :website,
     :user_id,
-    :category
+    :category,
+    photos: []
   )
   end
 end
