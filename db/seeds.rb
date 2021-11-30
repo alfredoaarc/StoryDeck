@@ -75,7 +75,7 @@ Category.create!(
   name: "100K to 499,999 Followers"
 )
 Category.create!(
-  name: "500K+"
+  name: "500K+ Followers"
 )
 
 
@@ -197,15 +197,12 @@ creator_monica = Creator.create!(
 
 creator_monica.photos.attach(io: photo_monica, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_monica.photos.attach(io: photo2_monica, filename: 'nes.jpg', content_type: 'image/jpg')
-creator_monica.categories << Category.find_by(name: "Pets")
-creator_monica.categories << Category.find_by(name: "10K to 19,999")
-creator_monica.categories << Category.find_by(name: "65+")
+creator_monica.categories << Category.find_by(name: "Pets 🐈")
+creator_monica.categories << Category.find_by(name: "10K to 19,999 Followers")
+creator_monica.categories << Category.find_by(name: "65+ yo")
 
 creator_monica.categories << Category.find_by(name: "Pets 🐈")
 creator_monica.categories << Category.find_by(name: "10K to 19,999 Followers")
-puts 'Content creator Monica created'
-
-
 puts 'Content creator Monica created'
 
 photo_andrea = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638279340/Story%20Deck/andrea_wtalfv.jpg")
@@ -218,7 +215,6 @@ andrea_user = User.create!(
   business_owner: false
 )
 
-
 creator_andrea = Creator.create!(
   stage_name: "RubyAndrea",
   user: andrea_user,
@@ -229,8 +225,8 @@ creator_andrea = Creator.create!(
 creator_andrea.photos.attach(io: photo_andrea, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_andrea.photos.attach(io: photo2_andrea, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_andrea.categories << Category.find_by(name: "Tech 💻")
-creator_andrea.categories << Category.find_by(name: "500K+")
-creator_andrea.categories << Category.find_by(name: "18-24")
+creator_andrea.categories << Category.find_by(name: "500K+ Followers")
+creator_andrea.categories << Category.find_by(name: "18-24 yo")
 
 puts 'Content creator Andrea created'
 
@@ -255,9 +251,9 @@ creator_pascal.photos.attach(io: photo_pascal, filename: 'nes.jpg', content_type
 creator_pascal.photos.attach(io: photo2_pascal, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_pascal.categories << Category.find_by(name: "Lifestyle ☕️")
 creator_pascal.categories << Category.find_by(name: "Fashion 💅")
-creator_pascal.categories << Category.find_by(name: "18-24")
-creator_pascal.categories << Category.find_by(name: "25-34")
-creator_pascal.categories << Category.find_by(name: "1,000 to 4,999")
+creator_pascal.categories << Category.find_by(name: "18-24 yo")
+creator_pascal.categories << Category.find_by(name: "25-34 yo")
+creator_pascal.categories << Category.find_by(name: "1,000 to 4,999 Followers")
 
 puts 'Content creator Pascal created'
 
@@ -282,9 +278,9 @@ creator_gonzalo.photos.attach(io: photo_gonzalo, filename: 'nes.jpg', content_ty
 creator_gonzalo.photos.attach(io: photo2_gonzalo, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_gonzalo.categories << Category.find_by(name: "Lifestyle ☕️")
 creator_gonzalo.categories << Category.find_by(name: "Cosmetics 💄")
-creator_gonzalo.categories << Category.find_by(name: "55-64")
-creator_gonzalo.categories << Category.find_by(name: "25-34")
-creator_gonzalo.categories << Category.find_by(name: "1,000 to 4,999")
+creator_gonzalo.categories << Category.find_by(name: "55-64 yo")
+creator_gonzalo.categories << Category.find_by(name: "25-34 yo")
+creator_gonzalo.categories << Category.find_by(name: "1,000 to 4,999 Followers")
 
 puts 'Content creator Gonzalo created'
 
@@ -309,7 +305,7 @@ creator_filippo.photos.attach(io: photo_filippo, filename: 'nes.jpg', content_ty
 creator_filippo.photos.attach(io: photo2_filippo, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_filippo.categories << Category.find_by(name: "Lifestyle ☕️")
 creator_filippo.categories << Category.find_by(name: "Food 🍔")
-creator_filippo.categories << Category.find_by(name: "25-34")
-creator_filippo.categories << Category.find_by(name: "1,000 to 4,999")
+creator_filippo.categories << Category.find_by(name: "25-34 yo")
+creator_filippo.categories << Category.find_by(name: "1,000 to 4,999 Followers")
 
 puts 'Content creator Filippo created'
