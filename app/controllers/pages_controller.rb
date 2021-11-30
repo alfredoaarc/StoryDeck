@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user = current_user
     @my_businesses = current_user.businesses
     @business_count = @my_businesses.count
     @plural = 'es'
