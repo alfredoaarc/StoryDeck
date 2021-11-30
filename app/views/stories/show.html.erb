@@ -6,10 +6,25 @@
       <h3 class="card-title"><%= @story.title %></h3>
       <h4 class="white">Who is it we want to reach?</h4>
       <!-- categories -->
+      <ul>
+        <% @story.categories.each do |category| %>
+          <li><%= category.name %></li>
+        <% end %>
+      </ul>
       <h4>About us</h4>
       <p class="card-text"><%= @business.description %></p>
       <a href="#" class="btn btn-custom btn-custom-dark">Start a conversation</a>
       <%= link_to 'Edit this story', edit_business_story_path(@business, @story), class: 'btn btn-custom btn-custom-dark-outline' %>
     </div>
   </div>
+</div>
+<div>
+  <% @creators.each do |creator| %>
+    <%= creator.stage_name %>
+    <%= simple_form_for [@story, @campaign] do |f| %>
+      <%= f.input :story_id, value: @story.id, label: false, input_html: {hidden: true}  %>
+      <%= f.input :creator_id, value: creator.id, label: false, input_html: {hidden: true} %>
+      <%= f.submit "Join Campaign" %>
+    <% end %>
+  <% end %>
 </div>

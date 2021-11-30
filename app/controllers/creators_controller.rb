@@ -1,12 +1,11 @@
 class CreatorsController < ApplicationController
-   def index
-    @creator = Creator.all
+  def index
+    @creators = Creator.all
   end
 
   def show
     @creator = Creator.find(params[:id])
   end
-
 
   def new
     @creator = Creator.new
@@ -15,10 +14,11 @@ class CreatorsController < ApplicationController
   def create
     @creator = Creator.new(creator_params)
     @creator.user = current_user
-    @creator.save
-    params[:creator][:category].each do |cat|
-      creator_category.create(creator_id: @creator, category_id: cat)
+    params[:creator][:category_ids].shift
+    params[:creator][:category_ids].each do |category_id|
+      @creator.categories << Category.find(category_id)
     end
+    @creator.save
 
     redirect_to dashboard_path
   end

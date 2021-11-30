@@ -1,13 +1,19 @@
 class StoriesController < ApplicationController
   def index
-    @stories = Story.all.where(business_id: params[:business_id])
-    @business = Business.find(params[:business_id])
+    if current_user.business_owner?
+      @stories = current_user.business_stories
+    else
+      @stories = Story.all
+    end
+    @campaign = Campaign.new
+    @creators = Creator.all
   end
 
   def show
+    @campaign = Campaign.new
+    @creators = Creator.all
     @story = Story.find(params[:id])
-    @business = Business.find(params[:business_id])
-    @story.business = @business
+    @business = @story.business
   end
 
   def new
@@ -19,7 +25,11 @@ class StoriesController < ApplicationController
     @business = Business.find(params[:business_id])
     @story = Story.new(story_params)
     @story.business = @business
-    @business.user = current_user
+
+    params[:story][:category_ids].shift
+    params[:story][:category_ids].each do |category_id|
+      @story.categories << Category.find(category_id)
+    end
     if @story.save!
       redirect_to business_stories_path(@business)
     else
@@ -28,8 +38,13 @@ class StoriesController < ApplicationController
   end
 
   def update
-    @story = Story.all
     @story = Story.find(params[:id])
+
+    params[:story][:category_ids].shift
+    @story.categories.destroy_all
+    params[:story][:category_ids].each do |category_id|
+      @story.categories << Category.find(category_id)
+    end
     if @story.update(story_params)
       redirect_to business_stories_path(params[:business_id])
       flash[:notice] = 'Your story has been updated.'
