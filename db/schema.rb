@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_111108) do
+ActiveRecord::Schema.define(version: 2021_11_30_091731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 2021_11_29_111108) do
   create_table "campaigns", force: :cascade do |t|
     t.string "status"
     t.bigint "story_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "creator_id", null: false
+    t.index ["creator_id"], name: "index_campaigns_on_creator_id"
     t.index ["story_id"], name: "index_campaigns_on_story_id"
-    t.index ["user_id"], name: "index_campaigns_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -81,11 +81,11 @@ ActiveRecord::Schema.define(version: 2021_11_29_111108) do
   create_table "creators", force: :cascade do |t|
     t.string "stage_name"
     t.string "user_id"
-    t.string "name"
     t.string "description"
     t.string "website"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "location"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_111108) do
     t.bigint "business_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "location"
     t.index ["business_id"], name: "index_stories_on_business_id"
   end
 
@@ -133,8 +134,8 @@ ActiveRecord::Schema.define(version: 2021_11_29_111108) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "businesses", "users"
+  add_foreign_key "campaigns", "creators"
   add_foreign_key "campaigns", "stories"
-  add_foreign_key "campaigns", "users"
   add_foreign_key "chatrooms", "campaigns"
   add_foreign_key "creator_categories", "categories"
   add_foreign_key "creator_categories", "creators"

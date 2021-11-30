@@ -1,5 +1,8 @@
 class Category < ApplicationRecord
-  belongs_to :business
-  belongs_to :user
-  validates :status, presence: true
+  has_many :creator_categories, dependent: :destroy
+  has_many :creators, through: :creator_categories
+
+  has_many :story_categories, dependent: :destroy
+  has_many :stories, through: :story_categories
+
 end
