@@ -15,79 +15,67 @@ User.destroy_all
 puts 'Database cleaned'
 
 Category.create!(
-  name: "18-24"
+  name: "18-24 yo"
 )
 Category.create!(
-  name: "Pets"
+  name: "25-34 yo"
 )
 Category.create!(
-  name: "25-34"
+  name: "35-44 yo"
 )
 Category.create!(
-  name: "35-44"
+  name: "45-54 yo"
 )
 Category.create!(
-  name: "45-54"
+  name: "55-64 yo"
 )
 Category.create!(
-  name: "55-64"
+  name: "65+ yo"
 )
 Category.create!(
-  name: "65+"
+  name: "Pets 🐈"
 )
 Category.create!(
-  name: "Cosmetics"
+  name: "Cosmetics 💄"
 )
 Category.create!(
-  name: "Lifestyle"
+  name: "Lifestyle ☕️"
 )
 Category.create!(
-  name: "Food"
+  name: "Food 🍔"
 )
 Category.create!(
-  name: "Travel"
+  name: "Travel ✈️"
 )
 Category.create!(
-  name: "Fashion"
+  name: "Fashion 💅"
 )
 Category.create!(
-  name: "Music"
+  name: "Music 🎶"
 )
 Category.create!(
-  name: "Tech"
+  name: "Tech 💻"
 )
 Category.create!(
-  name: "1,000 to 4,999"
+  name: "1,000 to 4,999 Followers"
 )
 Category.create!(
-  name: "5,000 to 9,999"
+  name: "5,000 to 9,999 Followers"
 )
 Category.create!(
-  name: "10K to 19,999"
+  name: "10K to 19,999 Followers"
 )
 Category.create!(
-  name: "20K to 49,999"
+  name: "20K to 49,999 Followers"
 )
 Category.create!(
-  name: "50K to 99,999"
+  name: "50K to 99,999 Followers"
 )
 Category.create!(
-  name: "100K to 499,999"
+  name: "100K to 499,999 Followers"
 )
 Category.create!(
-  name: "500K+"
-)
-Category.create!(
-  name: "food"
-)
-Category.create!(
-  name: "Travel"
-)
-Category.create!(
-  name: "Fashion"
-)
-Category.create!(
-  name: "Music"
+  name: "500K+ Followers"
 )
 
 # Seed users
@@ -127,7 +115,7 @@ story_huilo_huilo = Story.create!(
   published: true
 )
 story_huilo_huilo.categories << Category.all.sample
-puts 'Huilo Huilo business created'
+puts 'Huilo Huilo business and story created'
 
 chucao = Business.create!(
   name: 'Chucao',
@@ -143,12 +131,12 @@ story_chucao = Story.create!(
 )
 story_chucao.categories << Category.all.sample
 #PHOTO CODE TO BE ADDED
-puts 'Chucao business created'
+puts 'Chucao business and story created'
 
 cheval_dor = Business.create!(
   name: "Cheval d'Or",
-  description: 'Author cuisine with a taste of Asia in the heart of the city of light.',
-  website: 'https://chevaldorparis.com/',
+  description: "Author cuisine with a taste of Asia in the heart of the city of light.",
+  website: "https://chevaldorparis.com/",
   user_id: mo_user.id
 )
 story_cheval_dor = Story.create!(
@@ -157,8 +145,8 @@ story_cheval_dor = Story.create!(
   business: cheval_dor,
   published: true
 )
-story_cheval_dor.categories << Category.find_by(name: "Food")
-story_cheval_dor.categories << Category.find_by(name: "Lifestyle")
+story_cheval_dor.categories << Category.find_by(name: "Food 🍔")
+story_cheval_dor.categories << Category.find_by(name: "Lifestyle ☕️")
 puts "Cheval d'Or business created"
 
 # CRAETORS HERE 👇
@@ -176,8 +164,8 @@ creator_javiera = Creator.create!(
   location: "Santiago, Chile",
   website: "www.cookbook.xyz/javiera"
 )
-creator_javiera.categories << Category.find_by(name: "Food")
-creator_javiera.categories << Category.find_by(name: "1,000 to 4,999")
+creator_javiera.categories << Category.find_by(name: "Food 🍔")
+creator_javiera.categories << Category.find_by(name: "1,000 to 4,999 Followers")
 # ATTACH PHOTOS!!
 puts 'Content creator Javiera created'
 
@@ -195,8 +183,8 @@ creator_monica = Creator.create!(
   location: "Brussels",
   website: "www.monicaskatx.org"
 )
-creator_monica.categories << Category.find_by(name: "Pets")
-creator_monica.categories << Category.find_by(name: "10K to 19,999")
+creator_monica.categories << Category.find_by(name: "Pets 🐈")
+creator_monica.categories << Category.find_by(name: "10K to 19,999 Followers")
 puts 'Content creator Monica created'
 
 
@@ -214,8 +202,8 @@ creator_damian = Creator.create!(
   location: "Madrid",
   website: "www.damianscode.io"
 )
-creator_damian.categories << Category.find_by(name: "Tech")
-creator_damian.categories << Category.find_by(name: "Music")
+creator_damian.categories << Category.find_by(name: "Tech 💻")
+creator_damian.categories << Category.find_by(name: "Music 🎶")
 puts 'Content creator Damian created'
 
 alicia_user = User.create!(
