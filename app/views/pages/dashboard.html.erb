@@ -33,9 +33,12 @@
             <a href="<%= business.website %>" target="_blank" class="custom-link">
             <%= business.website %>
           </a></p>
+          <div style="text-align: center">
       <%= link_to "Create a story", new_business_story_path(business), class: "btn btn-custom btn-custom-dark mt-3" %><br>
       <%= link_to 'Edit this brand', edit_business_path(business), class: 'btn btn-custom btn-custom-dark-outline mt-3' %>
         </div>
+        </div>
+
       </div>
     </div>
     <% end %>

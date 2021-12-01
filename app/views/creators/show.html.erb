@@ -25,20 +25,22 @@
 <!-- END OF CAROUSEL -->
 
 <div class="container">
-  <h1 class="white"><%= @creator.stage_name %></h1>
-  <h4><%= @creator.location %></h4>
+  <h1 class="mt-4" ><%= @creator.stage_name %></h1>
+
+  <h4><i class="fas fa-map-marker-alt"></i> <%= @creator.location %></h4>
   <p><%= @creator.description %></p>
-  <div class="categories-show">
+  <div class="categories-list">
   <h4>About my community</h4>
   <% @creator.categories.each do |category| %>
   <%= category.name %>
   <% end %>
   </div>
-  <h4>Where my community is</h4>
-  <%= @creator.website %>
 
-  <div style="text-align: center">
-    <a href="#" class="btn btn-custom btn-custom-dark">Chat with creator</a>
-    <a href="/stories" class="btn btn-custom btn-custom-dark-outline">Browse creators</a>
+
+
+  <div class="mt-3" style="text-align: center">
+    <a href="https://<%= @creator.website %>" class="btn btn-custom btn-custom-dark mt-3">Contact me</a>
+    <%= link_to 'Back to creators', url_for(:back), class: 'btn btn-custom btn-custom-dark-outline mt-3' %>
+
   </div>
 </div>
