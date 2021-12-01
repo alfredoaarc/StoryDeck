@@ -29,10 +29,11 @@
 
   <h4><i class="fas fa-map-marker-alt"></i> <%= @creator.location %></h4>
   <p><%= @creator.description %></p>
-  <div class="categories-list">
   <h4>About my community</h4>
   <% @creator.categories.each do |category| %>
-  <%= category.name %>
+  <ul>
+  <li class="list-pills"><%= category.name %></li>
+  </ul>
   <% end %>
   </div>
 

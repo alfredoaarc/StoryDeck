@@ -1,43 +1,37 @@
 
 <div class="container">
-  <div class="" style="width: 21rem;">
-    <img src="<%= @story.photos %>" class="card-img-top" alt="...">
+  <div style="width: 21rem;">
+    <% @story.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     <div class="card-body">
       <h3 class="card-title"><%= @story.title %></h3>
-      <h4 class="white">Who is it we want to reach?</h4>
+      <h4 class="white">Target categories</h4>
       <!-- categories -->
       <ul>
         <% @story.categories.each do |category| %>
           <li><%= category.name %></li>
         <% end %>
       </ul>
-      <h4>About us</h4>
-      <p class="card-text"><%= @business.description %></p>
-      <a href="#" class="btn btn-custom btn-custom-dark">Start a conversation</a>
-      <%= link_to 'Edit this story', edit_business_story_path(@business, @story), class: 'btn btn-custom btn-custom-dark-outline' %>
+      <%= link_to 'Edit this story', edit_business_story_path(@business, @story), class: 'btn btn-custom btn-custom-dark' %>
     </div>
-  </div>
+
 </div>
-<div>
   <% @story_categories %>
   <% @creators.each do |creator| %>
     <% @creator_categories = creator.categories.map(&:name) %>
     <% unless (@creator_categories & @story_categories).empty? %>
       <div style="background-color: none;">
-        <%= creator.stage_name %>
+        <h2><%= creator.stage_name %></h2>
+        <p><%= creator.description %></p>
         <%= simple_form_for [@story, @campaign] do |f| %>
           <%= f.input :story_id, value: @story.id, label: false, input_html: {hidden: true}  %>
           <%= f.input :creator_id, value: creator.id, label: false, input_html: {hidden: true} %>
-          <%= f.submit "Join Campaign", class: "btn" %>
+          <%= link_to 'See more', creator_path(creator.id), class: 'btn btn-custom btn-custom-dark' %>
+
         <% end %>
       </div>
     <% else %>
-
-      <%= simple_form_for [@story, @campaign] do |f| %>
-        <%= f.input :story_id, value: @story.id, label: false, input_html: {hidden: true}  %>
-        <%= f.input :creator_id, value: creator.id, label: false, input_html: {hidden: true} %>
-        <%= f.submit "Join Campaign", class: "btn" %>
-      <% end %>
     <% end %>
   <% end %>
 </div>
