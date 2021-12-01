@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # Take unauthenticated users to home#index
   # Take authenticated users to dashboard
 
-  resources :businesses, only: [:index, :edit, :update, :destroy] do
+  resources :businesses, only: [:index, :edit, :update, :destroy, :new] do
     resources :stories, except: [:show]
   end
   resources :chatrooms, only: :show do
