@@ -1,7 +1,9 @@
 class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: %i[index show]
-  def index
-    @chatrooms = Chatroom.all
+
+  def show
+    @chatroom = Chatroom.find(params[:id])
+    @message = Message.new
   end
 
   private

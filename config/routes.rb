@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   resources :businesses, only: [:index, :edit, :update, :destroy] do
     resources :stories, except: [:show]
   end
-  resources :chatrooms do
-    resources :messages
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
   end
 
   resources :stories, only: [:show, :index] do
