@@ -1,17 +1,13 @@
-<%= @creator.stage_name %>
-
-
 <!-- CAROUSEL -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
 
   <div class="carousel-inner">
-  <% @creator.photos.each do |photo| %>
-    <div class="carousel-item active">
+  <% @creator.photos.each_with_index do |photo, index| %>
+    <div class="carousel-item <%= index == 0 ? 'active' : ' '  %>">
         <%= cl_image_tag photo.key, class: "d-block w-100" %>
     </div>
     <% end %>
@@ -27,3 +23,22 @@
   </a>
 </div>
 <!-- END OF CAROUSEL -->
+
+<div class="container">
+  <h1 class="white"><%= @creator.stage_name %></h1>
+  <h4><%= @creator.location %></h4>
+  <p><%= @creator.description %></p>
+  <div class="categories-show">
+  <h4>About my community</h4>
+  <% @creator.categories.each do |category| %>
+  <%= category.name %>
+  <% end %>
+  </div>
+  <h4>Where my community is</h4>
+  <%= @creator.website %>
+
+  <div style="text-align: center">
+    <a href="#" class="btn btn-custom btn-custom-dark">Chat with creator</a>
+    <a href="/stories" class="btn btn-custom btn-custom-dark-outline">Browse creators</a>
+  </div>
+</div>
