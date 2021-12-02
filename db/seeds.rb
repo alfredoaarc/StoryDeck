@@ -118,27 +118,28 @@ story_huilo_huilo = Story.create!(
 story_huilo_huilo.categories << Category.all.sample
 puts 'Huilo Huilo business and story created'
 
-chucao = Business.create!(
+Business.create!(
   name: 'Locomo-pizza',
   description: 'Come and try our amazing Italian style pizzas in a Wagon.',
-  website: 'https://www.instagram.com/chucao.design/',
+  website: 'https://www.locomo-pizzas.com/',
   user_id: mo_user.id
 )
-story_chucao = Story.create!(
-  title: "New collection of Ponchos, get yours now!",
-  description: "New awesome season collection, don't wait too long, get 'em while they're hot!",
-  business: chucao,
-  published: true
-)
-story_chucao.categories << Category.all.sample
+puts "Locommo-pizzas created"
+# story_chucao = Story.create!(
+  # title: "New collection of Ponchos, get yours now!",
+  # description: "New awesome season collection, don't wait too long, get 'em while they're hot!",
+  # business: chucao,
+  # published: true
+# )
+# story_chucao.categories << Category.all.sample
 #PHOTO CODE TO BE ADDED
-puts 'Chucao business and story created'
+# puts 'Chucao business and story created'
 
 cheval_dor = Business.create!(
   name: "Cheval d'Or",
   description: "Author cuisine with a taste of Asia in the heart of the city of light.",
   website: "https://chevaldorparis.com/",
-  user_id: mo_user.id
+  user_id: sara_user.id
 )
 story_cheval_dor = Story.create!(
   title: "New Asian brunch, ALL YOU CAN EAT!",
