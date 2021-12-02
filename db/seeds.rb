@@ -119,8 +119,8 @@ story_huilo_huilo.categories << Category.all.sample
 puts 'Huilo Huilo business and story created'
 
 chucao = Business.create!(
-  name: 'Chucao',
-  description: 'Handmade urban ponchos,100% Merino wool from Chile. We are a slow fashion brand.',
+  name: 'Locomo-pizza',
+  description: 'Come and try our amazing Italian style pizzas in a Wagon.',
   website: 'https://www.instagram.com/chucao.design/',
   user_id: mo_user.id
 )
@@ -150,6 +150,8 @@ story_cheval_dor.categories << Category.find_by(name: "Food 🍔")
 story_cheval_dor.categories << Category.find_by(name: "Lifestyle ☕️")
 puts "Cheval d'Or business created"
 
+# ________________________________
+
 
 # CREATORS HERE 👇
 photo_javiera = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638279340/Story%20Deck/javiera_prjbsg.jpg")
@@ -166,14 +168,14 @@ creator_javiera = Creator.create!(
   stage_name: "The Cookbook",
   user: javiera_user,
   description: "The art of becoming a domestic cooking Godess",
-  location: "Santiago, Chile",
+  location: "Madrid, Spain",
   website: "www.cookbook.xyz/javiera"
 )
 
 creator_javiera.photos.attach(io: photo_javiera, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_javiera.photos.attach(io: photo2_javiera, filename: 'nes.jpg', content_type: 'image/jpg')
-creator_javiera.categories << Category.find_by(name: "Food 🍔")
-creator_javiera.categories << Category.find_by(name: "1,000 to 4,999 Followers")
+creator_javiera.categories << Category.find_by(name: "Music 🎶")
+creator_javiera.categories << Category.find_by(name: "50K to 99,999 Followers")
 
 # ATTACH PHOTOS!!
 puts 'Content creator Javiera created'
@@ -201,31 +203,31 @@ creator_monica.categories << Category.find_by(name: "Pets 🐈")
 creator_monica.categories << Category.find_by(name: "10K to 19,999 Followers")
 creator_monica.categories << Category.find_by(name: "65+ yo")
 
-creator_monica.categories << Category.find_by(name: "Pets 🐈")
 creator_monica.categories << Category.find_by(name: "10K to 19,999 Followers")
 puts 'Content creator Monica created'
 
 photo_andrea = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638279340/Story%20Deck/andrea_wtalfv.jpg")
-photo2_andrea = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638279803/Story%20Deck/tech_andrea_mh9nnc.jpg")
+photo2_andrea = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638444205/Story%20Deck/m-s-meeuwesen-QYWYnzvPTAQ-unsplash_idv2no.jpg")
 andrea_user = User.create!(
   first_name: 'Andrea',
-  last_name: 'Rogers',
+  last_name: 'Montague',
   email: 'andrea@email.story',
   password: '123456',
   business_owner: false
 )
 
 creator_andrea = Creator.create!(
-  stage_name: "RubyAndrea",
+  stage_name: "AndreaDrinks",
   user: andrea_user,
-  description: "You can pretty much learn to code pretty much with Andrea",
-  location: "Porto",
-  website: "www.andreascode.io"
+  description: "You can pretty much drink pretty much with me.",
+  location: "Madrid, Spain",
+  website: "https://www.instagram.com/andreadrinks/"
 )
 creator_andrea.photos.attach(io: photo_andrea, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_andrea.photos.attach(io: photo2_andrea, filename: 'nes.jpg', content_type: 'image/jpg')
-creator_andrea.categories << Category.find_by(name: "Tech 💻")
-creator_andrea.categories << Category.find_by(name: "500K+ Followers")
+creator_andrea.categories << Category.find_by(name: "Food 🍔")
+creator_andrea.categories << Category.find_by(name: "Lifestyle ☕️")
+creator_andrea.categories << Category.find_by(name: "1,000 to 4,999 Followers")
 creator_andrea.categories << Category.find_by(name: "18-24 yo")
 
 puts 'Content creator Andrea created'
@@ -249,16 +251,12 @@ creator_pascal = Creator.create!(
 )
 creator_pascal.photos.attach(io: photo_pascal, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_pascal.photos.attach(io: photo2_pascal, filename: 'nes.jpg', content_type: 'image/jpg')
-creator_pascal.categories << Category.find_by(name: "Lifestyle ☕️")
 creator_pascal.categories << Category.find_by(name: "Fashion 💅")
-creator_pascal.categories << Category.find_by(name: "18-24 yo")
-creator_pascal.categories << Category.find_by(name: "25-34 yo")
-creator_pascal.categories << Category.find_by(name: "1,000 to 4,999 Followers")
 
 puts 'Content creator Pascal created'
 
-photo_gonzalo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638279340/Story%20Deck/gonzalo_f0fwur.jpg")
-photo2_gonzalo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638279803/Story%20Deck/cosmetics_gon_tea45p.jpg")
+photo_gonzalo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441897/Story%20Deck/14_plyqgm.jpg")
+photo2_gonzalo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441896/Story%20Deck/3_gwm7cb.jpg")
 gonzalo_user = User.create!(
   first_name: 'Gonzalo',
   last_name: 'De la Mancha',
@@ -268,16 +266,16 @@ gonzalo_user = User.create!(
 )
 
 creator_gonzalo = Creator.create!(
-  stage_name: "BeautyGon",
+  stage_name: "PizzaGon",
   user: gonzalo_user,
-  description: "You know what I'm gonna make look pretty? Your face.",
-  location: "Madrid",
-  website: "www.beautygon.com"
+  description: "You know what is really yummy? Your face. Nah just kidding, pizzas.",
+  location: "Madrid, Spain",
+  website: "https://www.instagram.com/ltslopo/"
 )
 creator_gonzalo.photos.attach(io: photo_gonzalo, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_gonzalo.photos.attach(io: photo2_gonzalo, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_gonzalo.categories << Category.find_by(name: "Lifestyle ☕️")
-creator_gonzalo.categories << Category.find_by(name: "Cosmetics 💄")
+creator_gonzalo.categories << Category.find_by(name: "Food 🍔")
 creator_gonzalo.categories << Category.find_by(name: "55-64 yo")
 creator_gonzalo.categories << Category.find_by(name: "25-34 yo")
 creator_gonzalo.categories << Category.find_by(name: "1,000 to 4,999 Followers")
@@ -285,7 +283,7 @@ creator_gonzalo.categories << Category.find_by(name: "1,000 to 4,999 Followers")
 puts 'Content creator Gonzalo created'
 
 photo_filippo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638279340/Story%20Deck/filippo_rhyezf.jpg")
-photo2_filippo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638279804/Story%20Deck/pasta_filippo_lc9cki.jpg")
+photo2_filippo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441897/Story%20Deck/7_kjy2u9.jpg")
 filippo_user = User.create!(
   first_name: 'Filippo',
   last_name: 'Della Carbonara',
@@ -297,9 +295,9 @@ filippo_user = User.create!(
 creator_filippo = Creator.create!(
   stage_name: "Filipasta",
   user: filippo_user,
-  description: "It's okay if you eat pizza with pineapple, just don't send pics.",
-  location: "Milano",
-  website: "www.filipasta.it"
+  description: "You can't find good pasta in Madrid but it's okay, I'll just go back to Italy.",
+  location: "Madrid, Spain",
+  website: "https://www.instagram.com/filippomancini_/"
 )
 creator_filippo.photos.attach(io: photo_filippo, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_filippo.photos.attach(io: photo2_filippo, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -309,3 +307,56 @@ creator_filippo.categories << Category.find_by(name: "25-34 yo")
 creator_filippo.categories << Category.find_by(name: "1,000 to 4,999 Followers")
 
 puts 'Content creator Filippo created'
+
+
+photo_legna = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441897/Story%20Deck/12_da7qh4.jpg")
+photo2_legna = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638444394/Story%20Deck/jordane-mathieu-W1TOhhlbQpw-unsplash_hfswh8.jpg")
+legna_user = User.create!(
+  first_name: 'Legna',
+  last_name: 'Chavez',
+  email: 'legna@email.story',
+  password: '123456',
+  business_owner: false
+)
+
+creator_legna = Creator.create!(
+  stage_name: "LegnaChocolat",
+  user: legna_user,
+  description: "I discovered Belgian chocolate two months ago and it changed my life.",
+  location: "Madrid, Spain",
+  website: "https://www.instagram.com/belgianchocolateschool/"
+)
+creator_legna.photos.attach(io: photo_legna, filename: 'nes.jpg', content_type: 'image/jpg')
+creator_legna.photos.attach(io: photo2_legna, filename: 'nes.jpg', content_type: 'image/jpg')
+creator_legna.categories << Category.find_by(name: "Lifestyle ☕️")
+creator_legna.categories << Category.find_by(name: "Food 🍔")
+creator_legna.categories << Category.find_by(name: "25-34 yo")
+creator_legna.categories << Category.find_by(name: "1,000 to 4,999 Followers")
+
+puts 'Content creator Legna created'
+
+photo_ale = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441896/Story%20Deck/6_ihwtja.jpg")
+photo2_ale = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441897/Story%20Deck/15_psnsvb.jpg")
+ale_user = User.create!(
+  first_name: 'Alejandro',
+  last_name: 'Doria',
+  email: 'ale@email.story',
+  password: '123456',
+  business_owner: false
+)
+
+creator_ale = Creator.create!(
+  stage_name: "Alejandrini",
+  user: ale_user,
+  description: "In my country we eat tacos and I have a Netflix show called the Taco Chronicles. You should watch it!",
+  location: "Madrid, Spain",
+  website: "https://www.instagram.com/chronictacos/"
+)
+creator_ale.photos.attach(io: photo_ale, filename: 'nes.jpg', content_type: 'image/jpg')
+creator_ale.photos.attach(io: photo2_ale, filename: 'nes.jpg', content_type: 'image/jpg')
+creator_ale.categories << Category.find_by(name: "Lifestyle ☕️")
+creator_ale.categories << Category.find_by(name: "Food 🍔")
+creator_ale.categories << Category.find_by(name: "25-34 yo")
+creator_ale.categories << Category.find_by(name: "1,000 to 4,999 Followers")
+
+puts 'Content creator Ale created'
