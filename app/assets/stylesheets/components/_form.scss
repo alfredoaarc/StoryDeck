@@ -42,3 +42,6 @@ input[type="checkbox"]:checked + label.collection_check_boxes {
   background-color: #293276;
   color: #EADED4;
 }
+.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+  color: none;
+}
