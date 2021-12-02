@@ -1,12 +1,12 @@
 
 <div class="container">
-  <div style="width: 21rem;">
+  <div class="mb-3">
     <% @story.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag photo.key, class: 'story-cover-photo', crop: :fill %>
     <% end %>
     <div class="card-body">
       <h3 class="card-title"><%= @story.title %></h3>
-      <h4 class="white">Target categories</h4>
+      <p><strong>Your target audience for this story:</strong></p>
       <!-- categories -->
       <ul>
         <% @story.categories.each do |category| %>
@@ -17,12 +17,19 @@
     </div>
 
 </div>
+<div class="border-top mb-3"></div>
+<div class="container">
+  <p><strong>See the creators who match your current brand story below 👇</strong></p>
+</div>
+
+<div class="container">
   <% @story_categories %>
   <% @creators.each do |creator| %>
+
     <% @creator_categories = creator.categories.map(&:name) %>
     <% unless (@creator_categories & @story_categories).empty? %>
-      <div style="background-color: none;">
-        <h2><%= creator.stage_name %></h2>
+      <div class="mt-4" style="background-color: none;">
+        <h3 class="mt-4">👤 <%= creator.stage_name %></h3>
         <p><%= creator.description %></p>
         <%= simple_form_for [@story, @campaign] do |f| %>
           <%= f.input :story_id, value: @story.id, label: false, input_html: {hidden: true}  %>
@@ -30,6 +37,7 @@
           <%= link_to 'See more', creator_path(creator.id), class: 'btn btn-custom btn-custom-dark' %>
 
         <% end %>
+
       </div>
     <% else %>
     <% end %>

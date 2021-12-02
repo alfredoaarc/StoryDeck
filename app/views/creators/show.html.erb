@@ -29,17 +29,19 @@
 
   <h4><i class="fas fa-map-marker-alt"></i> <%= @creator.location %></h4>
   <p><%= @creator.description %></p>
-  <h4>About my community</h4>
+  <h4 class="mb-3">About my community</h4>
+  <div class="d-flex flex-wrap">
   <% @creator.categories.each do |category| %>
-  <ul>
-  <li class="list-pills"><%= category.name %></li>
+  <ul class="list-pills">
+  <li><%= category.name %></li>
   </ul>
   <% end %>
+  </div>
   </div>
 
 
 
-  <div class="mt-3" style="text-align: center">
+  <div class="mt-3 container" style="text-align: center">
     <a href="https://<%= @creator.website %>" class="btn btn-custom btn-custom-dark mt-3">Contact me</a>
     <%= link_to 'Back to creators', url_for(:back), class: 'btn btn-custom btn-custom-dark-outline mt-3' %>
 
