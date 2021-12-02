@@ -256,32 +256,6 @@ creator_pascal.categories << Category.find_by(name: "Fashion 💅")
 
 puts 'Content creator Pascal created'
 
-photo_gonzalo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441897/Story%20Deck/14_plyqgm.jpg")
-photo2_gonzalo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441896/Story%20Deck/3_gwm7cb.jpg")
-gonzalo_user = User.create!(
-  first_name: 'Gonzalo',
-  last_name: 'De la Mancha',
-  email: 'gonzalo@email.story',
-  password: '123456',
-  business_owner: false
-)
-
-creator_gonzalo = Creator.create!(
-  stage_name: "PizzaGon",
-  user: gonzalo_user,
-  description: "You know what is really yummy? Your face. Nah just kidding, pizzas.",
-  location: "Madrid, Spain",
-  website: "https://www.instagram.com/ltslopo/"
-)
-creator_gonzalo.photos.attach(io: photo_gonzalo, filename: 'nes.jpg', content_type: 'image/jpg')
-creator_gonzalo.photos.attach(io: photo2_gonzalo, filename: 'nes.jpg', content_type: 'image/jpg')
-creator_gonzalo.categories << Category.find_by(name: "Lifestyle ☕️")
-creator_gonzalo.categories << Category.find_by(name: "Food 🍔")
-creator_gonzalo.categories << Category.find_by(name: "55-64 yo")
-creator_gonzalo.categories << Category.find_by(name: "25-34 yo")
-creator_gonzalo.categories << Category.find_by(name: "1,000 to 4,999 Followers")
-
-puts 'Content creator Gonzalo created'
 
 photo_filippo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638279340/Story%20Deck/filippo_rhyezf.jpg")
 photo2_filippo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441897/Story%20Deck/7_kjy2u9.jpg")
@@ -298,7 +272,7 @@ creator_filippo = Creator.create!(
   user: filippo_user,
   description: "You can't find good pasta in Madrid but it's okay, I'll just go back to Italy.",
   location: "Madrid, Spain",
-  website: "https://www.instagram.com/filippomancini_/"
+  website: "www.instagram.com/filippomancini_/"
 )
 creator_filippo.photos.attach(io: photo_filippo, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_filippo.photos.attach(io: photo2_filippo, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -325,7 +299,7 @@ creator_legna = Creator.create!(
   user: legna_user,
   description: "I discovered Belgian chocolate two months ago and it changed my life.",
   location: "Madrid, Spain",
-  website: "https://www.instagram.com/belgianchocolateschool/"
+  website: "www.instagram.com/belgianchocolateschool/"
 )
 creator_legna.photos.attach(io: photo_legna, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_legna.photos.attach(io: photo2_legna, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -351,7 +325,7 @@ creator_ale = Creator.create!(
   user: ale_user,
   description: "In my country we eat tacos and I have a Netflix show called the Taco Chronicles. You should watch it!",
   location: "Madrid, Spain",
-  website: "https://www.instagram.com/chronictacos/"
+  website: "instagram.com/chronictacos/"
 )
 creator_ale.photos.attach(io: photo_ale, filename: 'nes.jpg', content_type: 'image/jpg')
 creator_ale.photos.attach(io: photo2_ale, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -361,3 +335,30 @@ creator_ale.categories << Category.find_by(name: "25-34 yo")
 creator_ale.categories << Category.find_by(name: "1,000 to 4,999 Followers")
 
 puts 'Content creator Ale created'
+
+photo_gonzalo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441897/Story%20Deck/14_plyqgm.jpg")
+photo2_gonzalo = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638441896/Story%20Deck/3_gwm7cb.jpg")
+gonzalo_user = User.create!(
+  first_name: 'Gonzalo',
+  last_name: 'De la Mancha',
+  email: 'gonzalo@email.story',
+  password: '123456',
+  business_owner: false
+)
+
+creator_gonzalo = Creator.create!(
+  stage_name: "PizzaGon",
+  user: gonzalo_user,
+  description: "You know what is really yummy? Your face. Nah just kidding, pizzas.",
+  location: "Madrid, Spain",
+  website: "www.instagram.com/ltslopo/"
+)
+creator_gonzalo.photos.attach(io: photo_gonzalo, filename: 'nes.jpg', content_type: 'image/jpg')
+creator_gonzalo.photos.attach(io: photo2_gonzalo, filename: 'nes.jpg', content_type: 'image/jpg')
+creator_gonzalo.categories << Category.find_by(name: "Lifestyle ☕️")
+creator_gonzalo.categories << Category.find_by(name: "Food 🍔")
+creator_gonzalo.categories << Category.find_by(name: "55-64 yo")
+creator_gonzalo.categories << Category.find_by(name: "25-34 yo")
+creator_gonzalo.categories << Category.find_by(name: "1,000 to 4,999 Followers")
+
+puts 'Content creator Gonzalo created'
