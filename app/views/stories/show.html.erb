@@ -29,7 +29,7 @@
     <% @creator_categories = creator.categories.map(&:name) %>
     <% unless (@creator_categories & @story_categories).empty? %>
       <div class="mt-4" style="background-color: none;">
-        <h3 class="mt-4">👤 <%= creator.stage_name %></h3>
+        <h3 class="mt-4"> <%= cl_image_tag creator.photos.first.key, class: "avatar", crop: :thumb, gravity: :face %> <%= creator.stage_name %></h3>
         <p><%= creator.description %></p>
         <%= simple_form_for [@story, @campaign] do |f| %>
           <%= f.input :story_id, value: @story.id, label: false, input_html: {hidden: true}  %>
