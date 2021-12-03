@@ -207,7 +207,7 @@ creator_monica.categories << Category.find_by(name: "65+ yo")
 creator_monica.categories << Category.find_by(name: "10K to 19,999 Followers")
 puts 'Content creator Monica created'
 
-photo_andrea = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638279340/Story%20Deck/andrea_wtalfv.jpg")
+photo_andrea = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638525711/Story%20Deck/creator-8_j9ymuv.jpg")
 photo2_andrea = URI.open("https://res.cloudinary.com/novapixels/image/upload/v1638444205/Story%20Deck/m-s-meeuwesen-QYWYnzvPTAQ-unsplash_idv2no.jpg")
 andrea_user = User.create!(
   first_name: 'Andrea',
